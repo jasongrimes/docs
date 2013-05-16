@@ -1,11 +1,11 @@
 Silex Notes
 ===========
 
-Getting started with silex
+Some notes on getting started with the Silex PHP microframework.
 
-## Install with composer
+# Install with composer
 
-* Create composer.json
+## Create composer.json
 
     {
         "require": {
@@ -17,12 +17,12 @@ Getting started with silex
         }
     }
 
-* Run `composer install --dev` (the `--dev` causes the `require-dev` packages to be installed as well.)
+## Run `composer install --dev` (the `--dev` causes the `require-dev` packages to be installed as well.)
   If you don't already have composer, install it with ...
 
-## Create a hello world
+# Create a hello world
 
-* Create app.php
+## Create app.php
 
     <?php
 
@@ -36,7 +36,7 @@ Getting started with silex
 
     return $app;
 
-* Create web/index.php
+## Create web/index.php
 
     <?php
 
@@ -44,7 +44,7 @@ Getting started with silex
 
     $app->run();
 
-* Configure the web server. Ex. for Apache:
+## Configure the web server. Ex. for Apache:
 
 web/.htaccess:
 
@@ -54,7 +54,7 @@ Apache conf file:
 
 # Configure testing
 
-* Install PHPUnit. Add the following to composer, then run `composer update --dev`:
+## Install PHPUnit. Add the following to composer, then run `composer update --dev`:
 
     {
         "require-dev": {
@@ -64,7 +64,7 @@ Apache conf file:
         }
     }
 
-* Create `phpunit.xml`
+## Create `phpunit.xml`
 
     <?xml version="1.0" encoding="UTF-8"?>
     <phpunit backupGlobals="false"
@@ -89,7 +89,7 @@ Apache conf file:
         </php>
     </phpunit>
 
-* Create `tests/bootstrap.php`:
+## Create `tests/bootstrap.php`:
 
     <?php
 
@@ -97,7 +97,7 @@ Apache conf file:
 
     $loader->add('MyApp\Test', __DIR__);
 
-* Create `tests/MyApp/Test/WebTestCase.php`:
+## Create `tests/MyApp/Test/WebTestCase.php`:
 
     <?php
 
@@ -123,7 +123,7 @@ Apache conf file:
         }
     }
 
-* Create `tests/MyApp/Test/HelloTest.php`:
+## Create `tests/MyApp/Test/HelloTest.php`:
 
     <?php
 
@@ -154,14 +154,19 @@ Apache conf file:
 
 You can also access the Application through `$this->app`.
 
-* Run `phpunit` from the application root directory.
+## Run `phpunit` from the application root directory.
 
 # Services
 
-* Dependency injection. Pass in dependencies instead of instantiating them within the class.
-  Uses Pimple, a super simple dependency injection container that acts in many ways like a simple PHP array full of closures.
+## Dependency injection.
 
-* Create a class for the "hello" service:
+Pass in dependencies instead of instantiating them within the class.
+
+Uses Pimple, a super simple dependency injection container that acts in many ways like a simple PHP array full of closures.
+
+## Creating a service
+
+### Create a class for the "hello" service:
 
 `src/MyApp/Hello.php`:
 
@@ -184,7 +189,7 @@ You can also access the Application through `$this->app`.
         }
     }
 
-* Set up autoloading by adding to composer.json:
+### Set up autoloading by adding to composer.json:
 
     "autoload": {
         "psr-0": {
@@ -195,7 +200,7 @@ You can also access the Application through `$this->app`.
 Then run `composer dump-autoload`
 
 
-* Define the service in app.php:
+### Define the service in app.php:
 
     // Set parameters as keys on the app container.
     $app['hello.end_punctuation'] = '!';
@@ -240,7 +245,8 @@ Use: `$app['logger']->debug('Hello.');`
 
 ## Doctrine DBAL
 
-* Add to composer.json
+### Add to composer.json
+
 Include symfony/doctrine-bridge to get support for query logging (if monolog-bridge is installed and monolog.level is set to Logger::DEBUG).
 
     "require": {
@@ -248,7 +254,9 @@ Include symfony/doctrine-bridge to get support for query logging (if monolog-bri
         , "symfony/doctrine-bridge": "~2.2"
     }
 
-* Add to config files
+### Add to config files
+
+If using the config provider. Otherwise, pass as an argument when registering the service (see below).
 
 config/config.php:
 
@@ -267,7 +275,7 @@ Override your environment-specific config in config/dev.php:
         'password' => 'myDbPassword',
     ),
 
-* Add to app.php
+### Add to app.php
 
     $app->register(new Provider\DoctrineServiceProvider());
 
