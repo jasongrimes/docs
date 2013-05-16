@@ -101,3 +101,9 @@ Creating a global .gitignore
 
 * Create a `~/.gitignore_global` file.
 * `git config --global core.excludesfile ~/.gitignore_global`
+
+Changing the URL of a remote repo
+---------------------------------
+
+    git remote set-url origin git://new.url.here
+
