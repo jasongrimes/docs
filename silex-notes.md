@@ -5,7 +5,7 @@ Some notes on getting started with the Silex PHP microframework.
 
 ## Install with composer
 
-* Create composer.json
+Create composer.json
 
     {
         "require": {
@@ -17,8 +17,9 @@ Some notes on getting started with the Silex PHP microframework.
         }
     }
 
-* Run `composer install --dev` (the `--dev` causes the `require-dev` packages to be installed as well.)
-  If you don't already have composer, install it with ...
+Run `composer install --dev` (the `--dev` causes the `require-dev` packages to be installed as well.)
+
+If you don't already have composer, install it with ...
 
 ## Create a hello world
 
@@ -54,7 +55,7 @@ Apache conf file:
 
 ## Configure testing
 
-### Install PHPUnit.
+### Install PHPUnit
 
 Add the following to composer, then run `composer update --dev`:
 
@@ -91,7 +92,7 @@ Add the following to composer, then run `composer update --dev`:
         </php>
     </phpunit>
 
-### Create `tests/bootstrap.php`:
+### Create `tests/bootstrap.php`
 
     <?php
 
@@ -99,7 +100,7 @@ Add the following to composer, then run `composer update --dev`:
 
     $loader->add('MyApp\Test', __DIR__);
 
-### Create `tests/MyApp/Test/WebTestCase.php`:
+### Create `tests/MyApp/Test/WebTestCase.php`
 
     <?php
 
@@ -125,7 +126,7 @@ Add the following to composer, then run `composer update --dev`:
         }
     }
 
-### Create `tests/MyApp/Test/HelloTest.php`:
+### Create `tests/MyApp/Test/HelloTest.php`
 
     <?php
 
@@ -156,11 +157,11 @@ Add the following to composer, then run `composer update --dev`:
 
 You can also access the Application through `$this->app`.
 
-### Run `phpunit` from the application root directory.
+### Run `phpunit` from the application root directory
 
 ## Services
 
-### Dependency injection.
+### Dependency injection
 
 Pass in dependencies instead of instantiating them within the class.
 
@@ -168,7 +169,7 @@ Uses Pimple, a super simple dependency injection container that acts in many way
 
 ### Creating a service
 
-#### Create a class for the "hello" service:
+#### Create a class for the "hello" service
 
 `src/MyApp/Hello.php`:
 
@@ -191,7 +192,7 @@ Uses Pimple, a super simple dependency injection container that acts in many way
         }
     }
 
-#### Set up autoloading by adding to composer.json:
+#### Set up autoloading by adding to composer.json
 
     "autoload": {
         "psr-0": {
@@ -202,7 +203,7 @@ Uses Pimple, a super simple dependency injection container that acts in many way
 Then run `composer dump-autoload`
 
 
-#### Define the service in app.php:
+#### Define the service in app.php
 
     // Set parameters as keys on the app container.
     $app['hello.end_punctuation'] = '!';
