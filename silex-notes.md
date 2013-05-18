@@ -12,8 +12,8 @@ Create composer.json
             "silex/silex": "1.0.*@dev"
         },
         "require-dev": {
-            "symfony/browser-kit": ">=2.1,<2.3-dev"
-            , "phpunit/phpunit": "~3.7"
+            "symfony/browser-kit": ">=2.1,<2.3-dev",
+            "phpunit/phpunit": "~3.7"
         }
     }
 
@@ -61,9 +61,9 @@ Add the following to composer, then run `composer update --dev`:
 
     {
         "require-dev": {
-            "phpunit/phpunit": "~3.7"
-            , "symfony/browser-kit": ">=2.1,<2.3-dev"
-            , "symfony/css-selector": ">=2.1,<2.3-dev"
+            "phpunit/phpunit": "~3.7",
+            "symfony/browser-kit": ">=2.1,<2.3-dev",
+            "symfony/css-selector": ">=2.1,<2.3-dev"
         }
     }
 
@@ -253,8 +253,8 @@ Use: `$app['logger']->debug('Hello.');`
 Include symfony/doctrine-bridge to get support for query logging (if monolog-bridge is installed and monolog.level is set to Logger::DEBUG).
 
     "require": {
-        "doctrine/dbal": "~2.2"
-        , "symfony/doctrine-bridge": "~2.2"
+        "doctrine/dbal": "~2.2",
+        "symfony/doctrine-bridge": "~2.2"
     }
 
 #### Add to config files
@@ -283,6 +283,8 @@ Override your environment-specific config in config/dev.php:
     $app->register(new Provider\DoctrineServiceProvider());
 
 ## Error handling
+
+
 
 ## Middleware
 
