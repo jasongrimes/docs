@@ -1,12 +1,50 @@
 # Composer notes
 
-## Creating a composer package
+Some notes in preparation for a talk on Composer.
+
+# Intro
+
+## What is Composer?
+
+* One-line definition
+* Compare to PEAR, svn externals, git submodules
+* Other languages have had this for awhile: npm (Node), pip (Python), bundler (Ruby)
+  Composer is pretty new. (Since when?)
+
+## Installing
+
+## Use cases
+
+Two main use cases:
+
+* managing dependencies in a project 
+* distributing a library
+
+# Managing dependencies
+
+## Simple example of getting a dependency package
+
+## Specifying package versions
+
+## Bootstrapping projects
+
+## Adding more dependencies
+
+## Finding packages
+
+## Autoloading
+
+## System dependencies
+
+## composer.lock
+
+# Distributing a library
 
 See https://github.com/composer/composer/blob/master/doc/02-libraries.md
 
-### Create a composer.json for the package
+## Create a composer.json for the package
 
-First create a git repo for the package.
+First create a repo for the package.
 
 Then add a composer.json in the root directory:
 
@@ -31,35 +69,7 @@ Then add a composer.json in the root directory:
         }
     }
 
-### Require the package in another project.
-
-Other projects can require the new package before it has been added to packagist by manually defining the repository in the dependent project's composer.json.
-Require the "dev-master" version to get the latest sources from the master branch. 
-
-    {
-        "repositories": [
-            {
-                "type": "vcs",
-                "url": "http://github.com/jasongrimes/silex-simpleuser"
-            }
-        ],
-        "require": {
-            "jasongrimes/silex-simpleuser": "dev-master"
-        }
-    }
-
-Note: When developing a package alongside another project, it can be easier to use the local sources instead of updating the composer package between changes.
-To use the local package sources, remove the package's "require" line from composer.json, and add a line to the "autoload" section pointing to the local package sources.
-
-    "autoload": {
-        "psr-0": {
-            "SimpleUser": "../../silex-simpleuser/src"
-        }
-    }
-
-Then regenerate the autoloader configuration with `composer dump-autoload`
-
-### Versions
+## Tag release versions
 
 When publishing the package on packagist, it can infer the version information from the VCS (i.e. git) by looking at tags and branches.
 
@@ -86,6 +96,38 @@ Examples of version branch names:
     1.1.x
 
 You can also alias branch names to version numbers, so they can be matched when comparing version numbers. See https://github.com/composer/composer/blob/master/doc/articles/aliases.md
+
+## Executing scripts with composer
+
+
+
+## Custom repositories
+
+Other projects can require the new package before it has been added to packagist by manually defining the repository in the dependent project's composer.json.
+Require the "dev-master" version to get the latest sources from the master branch. 
+
+    {
+        "repositories": [
+            {
+                "type": "vcs",
+                "url": "http://github.com/jasongrimes/silex-simpleuser"
+            }
+        ],
+        "require": {
+            "jasongrimes/silex-simpleuser": "dev-master"
+        }
+    }
+
+Note: When developing a package alongside another project, it can be easier to use the local sources instead of updating the composer package between changes.
+To use the local package sources, remove the package's "require" line from composer.json, and add a line to the "autoload" section pointing to the local package sources.
+
+    "autoload": {
+        "psr-0": {
+            "SimpleUser": "../../silex-simpleuser/src"
+        }
+    }
+
+Then regenerate the autoloader configuration with `composer dump-autoload`
 
 ### Submitting the package to packagist
 
