@@ -177,10 +177,20 @@ See http://vim.wikia.com/wiki/File_format
 * See the global file format options in use: `:set ffs?`
 * Set the format of the current buffer to use unix line endings: `:set ff=unix`
 
+Folding
+=======
+
+* Open one level of folds within the whole buffer ("reduce" folds): `zr`
+* Open all folds in the whole buffer: `zR` 
+* Close one level of folds within the whole buffer ("more" folds): `zm`
+* Close all folds: `zM`
+* Open one level of fold under cursor: `zo`
+* Close one level of fold under cursor: `zc`
+* Toggle one level of fold under cursor: `za`
+
 Misc
 ====
 
-* Un-fold all folded text: `zR` 
 * Go to line 23: `:23` 
 * Duplicate current line: `yyp` or `:t.`
 * Enable or disable line numbers: `set number` and `set nonumber`
