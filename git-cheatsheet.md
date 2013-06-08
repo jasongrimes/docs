@@ -3,6 +3,14 @@ Git cheatsheet
 
 Quick overview of basics: http://rogerdudler.github.com/git-guide/
 
+Forking a repo
+--------------
+
+* Click the fork button for the repo on github.com
+* Clone it to local machine (creates dir foo in cwd, you can rename later): `git clone git@github.com:jasongrimes/foo.git`
+* Add upstream remote (since "origin" points to your fork): `cd foo; git remote add upstream https://github.com/originaluser/foo.git`
+* Pull in changes from upstream (without modifying local files): `git pull upstream master` 
+
 Add and commit
 --------------
 
@@ -63,14 +71,6 @@ Creating a new github repo
     git remote add origin https://github.com/jasongrimes/<reponame>.git # Point the "origin" remote to the github repo
     git pull origin master  # Get README and .gitignore files from Github, if any
     git push origin master  # Send commits to Github
-
-Forking a repo
---------------
-
-* Click the fork button for the repo on github.com
-* Clone it to local machine (creates dir foo in cwd, you can rename later): `git clone https://github.com/jasongrimes/foo.git`
-* Add upstream remote (since "origin" points to your fork): `cd foo; git remote add upstream https://github.com/originaluser/foo.git`
-* Pull in changes from upstream (without modifying local files): `git pull upstream master`
 
 Rollbacks
 ---------
