@@ -15,6 +15,7 @@ Selecting text
 
 * Visual select entire lines: `V`
 * Select all: `ggVG`
+* Re-select the last selected visual area: `gv`
 
 Copy / paste
 ============
