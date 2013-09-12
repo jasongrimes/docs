@@ -189,6 +189,16 @@ Folding
 * Close one level of fold under cursor: `zc`
 * Toggle one level of fold under cursor: `za`
 
+Word wrap
+=========
+
+* Set the text width (wraps as close to 80 chars as whitespace allows without exceeding it): `:set tw=80`
+* Disable text width: `:set tw=0`
+
+To wrap text, either visually select a block of text and type `gq`, 
+or else move the cursor to the beginning of the line to format, 
+type `gq`, and then specify the range, ex. `$` to format to the end of the line.
+
 Misc
 ====
 
