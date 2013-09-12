@@ -199,6 +199,8 @@ To wrap text, either visually select a block of text and type `gq`,
 or else move the cursor to the beginning of the line to format, 
 type `gq`, and then specify the range, ex. `$` to format to the end of the line.
 
+To quickly reformat a paragraph, put the cursor somewhere within the paragraph and type: `vipgq`
+
 Misc
 ====
 
