@@ -194,12 +194,11 @@ Word wrap
 
 * Set the text width (wraps as close to 80 chars as whitespace allows without exceeding it): `:set tw=80`
 * Disable text width: `:set tw=0`
+* Wrap the paragraph the cursor is in: `vipgq`
 
 To wrap text, either visually select a block of text and type `gq`, 
 or else move the cursor to the beginning of the line to format, 
 type `gq`, and then specify the range, ex. `$` to format to the end of the line.
-
-To quickly reformat a paragraph, put the cursor somewhere within the paragraph and type: `vipgq`
 
 Misc
 ====
@@ -207,6 +206,7 @@ Misc
 * Go to line 23: `:23` 
 * Duplicate current line: `yyp` or `:t.`
 * Enable or disable line numbers: `set number` and `set nonumber`
+* Count words: optionally select a block of text, then type: `g Ctl-g`
 
 Color schemes
 =============
