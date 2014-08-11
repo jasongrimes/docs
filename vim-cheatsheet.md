@@ -5,7 +5,7 @@ Indentation
 * Indent current line one tab width: `>>`
 * Indent selected text one tab width: `>`
 * Indent selected text 2 tab widths: `2>`
-* Toggling auto-indenting for code paste: `<F2>` # (See [this vim tip](http://vim.wikia.com/wiki/VimTip906))
+* Toggling auto-indenting for code paste: `:set paste` and `:set nopaste` # (See [this vim tip](http://vim.wikia.com/wiki/VimTip906))
 * Change the indent width to 2: `:set sw=2 ts=2`
 * Insert tabs as spaces: `:set expandtab`
 * Convert all existing tabs to spaces: `:retab`
