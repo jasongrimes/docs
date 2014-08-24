@@ -6,9 +6,17 @@ Some notes in preparation for a talk on Composer.
 
 ## What is Composer?
 
-* One-line definition
+Composer is a tool for dependency management in PHP.
+
+* Declare dependencies in a JSON config file and store in version control.
+* Run composer to install the packages locally, per-project.
+* Ensures identical package versions in all environments.
+
+# Inspired by Node's npm and Ruby's bundler
+
+
+
 * Compare to PEAR, svn externals, git submodules
-* Other languages have had this for awhile: npm (Node), pip (Python), bundler (Ruby)
   Composer is pretty new. (Since when?)
 
 ## Installing
