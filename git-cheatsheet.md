@@ -3,6 +3,17 @@ Git cheatsheet
 
 Quick overview of basics: http://rogerdudler.github.com/git-guide/
 
+Checking out a repository
+-------------------------
+
+Create a working copy of a repository in the current directory.
+
+    git clone username@host:/path/to/repository
+
+ex.
+
+    git clone git@github.com:jasongrimes/silex-simpleuser.git
+
 Forking a repo
 --------------
 
