@@ -44,8 +44,14 @@ Branching
 * Switch back to master: `git checkout master`
 * Delete a branch: `git branch -d feature_x`
 * Push a branch to remote repo: `git push origin <branch>`
+  A branch is not available to others unless it has been pushed to the remote repository.
 
-A branch is not available to others unless it has been pushed to the remote repository.
+Merging a branch back into master:
+
+    git checkout master
+    git pull origin master
+    git merge my_branch
+    git push origin master
 
 Update and merge
 ----------------
