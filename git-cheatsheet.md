@@ -124,3 +124,41 @@ Changing the URL of a remote repo
 
     git remote set-url origin git://new.url.here
 
+
+How to contribute to an open source project on Github
+=====================================================
+
+See http://www.hanselman.com/blog/GetInvolvedInOpenSourceTodayHowToContributeAPatchToAGitHubHostedOpenSourceProjectLikeCode52.aspx 
+
+## If fixing a bug, first create an issue and claim it
+
+This step is optional. Create a new issue on github. Claim it. Remember the number.
+
+## Fork the project on Github
+
+See https://help.github.com/articles/fork-a-repo
+
+* Click the fork button on the project's Github page.
+* Clone it to local machine: `git clone https://github.com/jasongrimes/oauth2-php.git`
+* Configure the upstream remote:
+
+    cd oauth2-php
+    git remote add upstream https://github.com/FriendsOfSymfony/oauth2-php.git
+    git pull upstream
+
+## Make a branch for your issue
+
+    git checkout -b update-phpdoc
+
+## Commit the change and push to your remote
+
+Include your issue number in the commit message, so it can be automatically associated.
+
+    git add .
+    git commit -m 'Update PHPDoc documentation of interfaces.'
+    git push origin update-phpdoc
+
+## Submit a pull request
+
+See https://help.github.com/articles/using-pull-requests
+
