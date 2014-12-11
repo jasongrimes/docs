@@ -192,6 +192,8 @@ Folding
 Word wrap
 =========
 
+* Soft wrap, doesn't insert newlines: `:set wrap linebreak nolist`
+* To navigate within a soft-wrapped paragraph, prepend "g" to the command. Ex. `gk`, `gj`, `g0`, `g$`, etc.
 * Set the text width (wraps as close to 80 chars as whitespace allows without exceeding it): `:set tw=80`
 * Disable text width: `:set tw=0`
 * Wrap the paragraph the cursor is in: `vipgq`
