@@ -79,14 +79,12 @@ Getting info
 Creating a new github repo
 --------------------------
 
-* Create a new repository on github
-* In local sources, run:
-
+Create a new repository on github. Then in local sources, run:
 
     git init
     git add .
     git commit -m 'Initial commit.'
-    git remote add origin https://github.com/jasongrimes/<reponame>.git # Point the "origin" remote to the github repo
+    git remote add origin git@github.com:jasongrimes/<reponame>.git # Point the "origin" remote to the github repo
     git pull origin master  # Get README and .gitignore files from Github, if any
     git push origin master  # Send commits to Github
 
