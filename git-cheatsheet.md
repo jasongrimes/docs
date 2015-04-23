@@ -82,6 +82,7 @@ Creating a new github repo
 * Create a new repository on github
 * In local sources, run:
 
+
     git init
     git add .
     git commit -m 'Initial commit.'
